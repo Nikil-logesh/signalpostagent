@@ -1,0 +1,37 @@
+[project]
+name = "signalpost"
+version = "0.1.0"
+description = "Evidence-first Norwegian company profiles for Signalpost"
+requires-python = ">=3.12"
+dependencies = [
+  "beautifulsoup4>=4.14,<5",
+  "extruct>=0.18,<1",
+  "lxml>=6,<7",
+  "pydantic>=2.12,<3",
+  "pypdf>=6,<7",
+  "tldextract>=5.3,<6",
+  "trafilatura>=2.0,<3",
+]
+
+[project.optional-dependencies]
+crawler = [
+  "scrapy>=2.13,<3",
+  "scrapy-playwright>=0.0.44,<1",
+]
+llm = [
+  "httpx>=0.27,<1",
+]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.8,<1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "kit/src", "kit"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
