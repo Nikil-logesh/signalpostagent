@@ -13,3 +13,27 @@ reports/
 *.sqlite3-wal
 *.sqlite3-shm
 *.tmp
+
+# Large runtime / data files — do not commit
+brreg-enheter.csv
+daily-bulk.csv
+smoke-bulk.csv
+smoke-5.jsonl
+data/samples/
+data/*.csv
+*.egg-info/
+dist/
+build/
+
+# Internal project tracking files
+PROGRESS.md
+
+# Scratch/probe scripts (keep production scripts only)
+scripts/probe_*.py
+scripts/check_*.py
+scripts/inspect_*.py
+scripts/clear_*.py
+scripts/test_news*.py
+scripts/phase*.py
+scripts/compare_*.py
+scripts/post_benchmark.py
